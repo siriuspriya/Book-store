@@ -1,6 +1,7 @@
 # LAMP [ Linux, Apache, MySQL, PHP]
 
-## Deployment through Jenkins Pipeline
+
+## Testing triggers Deployment through Jenkins Pipeline
 - launch server
 - t2.medium
 - os: ubuntu 20.04
