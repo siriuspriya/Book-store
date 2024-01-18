@@ -3,7 +3,7 @@ pipeline {
        label 'docker'
      }
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('docker-hub')
+        DOCKERHUB_CREDENTIALS = credentials('dockeruser')
         registry = "mubeen507/book-store"
     }
     stages{
