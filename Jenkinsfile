@@ -54,7 +54,7 @@ pipeline {
                     if (existingBookContainer) {
                         sh "docker rm -f ${existingBookContainer}"
                     }
-                    sh 'docker run -dt --name book --network booknetwork -p 80:80 -e DB_SERVERNAME=mysql -e DB_USERNAME=root -e DB_PASSWORD=Qwerty@123 -e DB_NAME=mkbook mubeen507/book-store'
+                    sh 'docker run -dt --name book --network booknetwork -p 80:80 -e DB_SERVERNAME=mysql -e DB_USERNAME=root -e DB_PASSWORD=Qwerty@123 -e DB_NAME=mkbook siriuspriya/book-store'
                 }
             }
         }
