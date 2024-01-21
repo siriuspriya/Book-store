@@ -4,23 +4,23 @@ pipeline {
      }
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockeruser')
-        registry = "mubeen507/book-store"
+        registry = "siriuspriya/book-store"
     }
     stages{
         stage('Docker Build') {
             steps {
-                sh 'docker build -t mubeen507/book-store .'
+                sh 'docker build -t siriuspriya/book-store .'
               }
           }
         stage('Docker Login & Push') {
             steps {
 		sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                sh 'docker push mubeen507/book-store'
+                sh 'docker push siriuspriya/book-store'
               }
           }
         stage('Remove Docker Images') {
             steps {
-                sh 'docker rmi -f mubeen507/book-store'
+                sh 'docker rmi -f siriuspriya/book-store'
               }
           }
         stage('Docker Network') {
@@ -61,10 +61,10 @@ pipeline {
 	stage('Slack Notification') {
 	    steps {
 	        slackSend(
-	            channel: 'book-jenkins',
+	            channel: 'jenkins_testintegration',
 	            color: '439FE0',
 	            message: "Job '${env.JOB_NAME}' build #${env.BUILD_NUMBER} - Your book store application deployed successfully!",
-	            teamDomain: 'konalms',
+	            teamDomain: 'siriuslync',
 	            tokenCredentialId: 'slack',
 	            username: 'jenkins'
 	        )
