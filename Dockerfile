@@ -2,10 +2,10 @@
 FROM php:7.4-apache
 
 # Create a directory named 'app' within the container
-RUN mkdir /app
+RUN mkdir /dockerapp
 
 # Set the working directory to the 'app' directory
-WORKDIR /app
+WORKDIR /dockerapp
 
 # Copy the PHP application files from the host to the 'app' directory in the container
 COPY . .
